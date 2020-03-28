@@ -1,5 +1,5 @@
 import random
-
+import util
 
 def jogar():
     imprime_mensagem_abertura()
@@ -87,37 +87,13 @@ def desenha_forca(erros):
 
 def imprime_mensagem_vencedor():
     print("Parabéns, você ganhou!")
-    print("       ___________      ")
-    print("      '._==_==_=_.'     ")
-    print("      .-\\:      /-.    ")
-    print("     | (|:.     |) |    ")
-    print("      '-|:.     |-'     ")
-    print("        \\::.    /      ")
-    print("         '::. .'        ")
-    print("           ) (          ")
-    print("         _.' '._        ")
-    print("        '-------'       ")
+    util.imprime_taca()
 
 
 def imprime_mensagem_perdedor(palavra_secreta):
     print("Puxa, você foi enforcado!")
     print("A palavra era {}".format(palavra_secreta))
-    print("    _______________         ")
-    print("   /               \\       ")
-    print("  /                 \\      ")
-    print("//                   \\/\\  ")
-    print("\\|   XXXX     XXXX   | /   ")
-    print(" |   XXXX     XXXX   |/     ")
-    print(" |   XXX       XXX   |      ")
-    print(" |                   |      ")
-    print(" \\__      XXX      __/     ")
-    print("   |\\     XXX     /|       ")
-    print("   | |           | |        ")
-    print("   | I I I I I I I |        ")
-    print("   |  I I I I I I  |        ")
-    print("   \\_             _/       ")
-    print("     \\_         _/         ")
-    print("       \\_______/           ")
+    util.imprime_caveira()
 
 def marca_chute_correto(chute, letras_acertadas, palavra_secreta):
     index = 0
@@ -140,7 +116,8 @@ def imprime_mensagem_abertura():
     print("*********************************")
 
 def carrega_palavra_secreta():
-    assuntos = "frutas", "nomes-masculinos", "nomes-femininos", "cidades", "objetos"
+    # "nomes-masculinos", "nomes-femininos", "cidades", "objetos"
+    assuntos = "frutas", 
     assunto_escolhido = assuntos[random.randrange(0, len(assuntos))]
     print("DICA: {}".format(assunto_escolhido))
     

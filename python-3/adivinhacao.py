@@ -1,4 +1,5 @@
 import random
+import util
 
 def jogar():
 
@@ -9,6 +10,7 @@ def jogar():
     numero_secreto = random.randrange(1,101)
     total_de_tentativas = 0
     pontos = 1000
+    acertou = False
 
     print("Qual nível de dificuldade?")
     print("(1) Fácil (2) Médio (3) Difícil")
@@ -39,6 +41,7 @@ def jogar():
 
         if(acertou):
             print("Você acertou e fez {} pontos!".format(pontos))
+            print("Parabéns, você ganhou!")
             break
         else:
             if(maior):
@@ -48,6 +51,7 @@ def jogar():
             pontos_perdidos = abs(numero_secreto - chute)
             pontos = pontos - pontos_perdidos
 
+    util.imprime_taca() if acertou else util.imprime_caveira()
     print("Número secreto: " + str(numero_secreto) + "\nFim do jogo")
 
 if(__name__ == "__main__"):
