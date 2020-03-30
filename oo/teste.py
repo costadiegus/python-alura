@@ -1,12 +1,20 @@
-def cria_conta(numero, titular, saldo, limite):
-    conta = {"numero": numero, "titular": titular, "saldo": saldo, "limite": limite}
-    return conta
+from conta import Conta
+from datas import Data
 
-def deposita(conta, valor):
-    conta["saldo"] += valor
 
-def saca(conta, valor):
-    conta["saldo"] -= valor
+def executa():
+    cc = Conta(123, "Eric Clapton", 150.5)
+    cc.extrato()
 
-def extrato(conta):
-    print("Saldo {}".format(conta["saldo"]))
+    cc.deposita(50)
+    cc.extrato()
+
+    cc.saca(50)
+    cc.extrato()
+
+    d = Data(21, 11, 2007)
+    d.formatada()
+
+
+if __name__ == "__main__":
+    executa()
