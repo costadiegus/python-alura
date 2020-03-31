@@ -8,3 +8,12 @@ class Data:
         # # print("{}/{}/{}.format(self.dia, self.mes, self.ano)")
         # print(f"{self.dia}/{self.mes}/{self.ano}")
         print(self.dia, self.mes, self.ano, sep="/")
+
+
+def executa():
+    d = Data(21, 11, 2007)
+    d.formatada()
+
+
+if __name__ == "__main__":
+    executa()

@@ -12,8 +12,13 @@ def executa():
     cc.saca(50)
     cc.extrato()
 
-    d = Data(21, 11, 2007)
-    d.formatada()
+    cc_2 = Conta(111, "Jonh Travolta", 250.0)
+    cc_2.extrato()
+    cc_2.transfere(45, cc)
+    cc_2.extrato()
+
+    print(Conta.codigo_banco())
+    print(Conta.codigos_bancos())
 
 
 if __name__ == "__main__":
