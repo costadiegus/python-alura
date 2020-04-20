@@ -41,13 +41,10 @@ class Serie(Programa):
         return f"Nome: {self.nome} - {self.temporadas} temporadas - Likes: {self.likes}"
 
 
-class Playlist:
+class Playlist(list):
     def __init__(self, nome, programas):
         self.nome = nome
-        self.programas = programas
-
-    def tamanho(self):
-        return len(self.programas)
+        super().__init__(programas)
 
 
 def executa():
@@ -69,8 +66,9 @@ def executa():
     listinha = [atlanta, vingadores, demolidor, tmep]
     minha_playlist = Playlist("fim de semana", listinha)
 
-    for programa in minha_playlist.programas:
+    for programa in minha_playlist:
         print(programa)
+    print(f"Tamanho: {len(minha_playlist)}")
 
 
 if __name__ == "__main__":
